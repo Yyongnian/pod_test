@@ -27,11 +27,8 @@
     NSError *error;
     NSData *jsonData = [NSJSONSerialization dataWithJSONObject:dict options:NSJSONWritingPrettyPrinted error:&error];
     NSString *jsonString;
-    if (!jsonData) {
-        WVRLogError(@"%@",error);
-    }else{
+
         jsonString = [[NSString alloc]initWithData:jsonData encoding:NSUTF8StringEncoding];
-    }
     NSMutableString *mutStr = [NSMutableString stringWithString:jsonString];
     NSRange range = {0,jsonString.length};
     //去掉字符串中的空格
